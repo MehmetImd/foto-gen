@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import default_image from '../../Assets/gen.jpg';
+import { key } from '../../../key';
 
 const ImageGenerator = () => {
   const [imageUrl, setImageUrl]  = useState("/");
@@ -18,7 +19,7 @@ const ImageGenerator = () => {
         method:"POST",
         headers:{
           "Content-Type":"application/json",
-          Authorization:"Bearer sk-proj-0ntEUCPNRsz3kOyqtV7gT3BlbkFJdVPw9tVexZCnS8Tnp5qN",
+          Authorization:`Bearer ${key}`,
         },
         body:JSON.stringify({
           prompt: `${inputRef.current.value}`,
